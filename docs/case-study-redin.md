@@ -6,9 +6,9 @@
 
 ## Scale of Operations
 
-- **Team**: ~4 architects handling customer-facing operations
-- **Volume**: ~30-45 maintenance requests per day
-- **WhatsApp interactions**: Each request involves multiple messages (problem description, photos, videos, voice notes, scheduling back-and-forth) — potentially 150-300+ WhatsApp interactions per day handled manually
+- **Team**: ~3 architects handling customer-facing operations
+- **Volume**: ~40 maintenance requests per day per architect (~120 total/day)
+- **WhatsApp interactions**: Each request involves multiple messages (problem description, photos, videos, voice notes, scheduling back-and-forth) — potentially 500+ WhatsApp interactions per day handled manually across the team
 - **Coverage**: 25+ cities across Colombia
 
 ## The Existing Workflow (Before Automation)
@@ -30,7 +30,7 @@ All of this happens in WhatsApp groups or direct chats. The bot MUST be multimod
 5. **Tracking**: Work order details are manually entered into their system (AppSheet built on Google Sheets)
 6. **Follow-up**: Status updates and completion confirmations via WhatsApp
 
-This loop happens 30-45 times per day across 4 architects. Each architect is a bottleneck — every new request requires their manual interpretation, classification, and routing.
+This loop happens ~40 times per day PER architect (~120 total across 3 architects). Each architect is a bottleneck — every new request requires their manual interpretation, classification, and routing.
 
 ## The System They Already Have
 

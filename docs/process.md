@@ -21,7 +21,7 @@ This documents the real process followed to build the first WhatsApp automation 
 
 **Key insight**: The ideal tool would have been a **meeting transcription service** (like Otter.ai or similar) feeding the full Spanish conversation directly to the AI. Instead, Irina manually bridged the gap by typing in real time. This is itself a friction that future tooling should solve — the AI should be able to listen to the discovery call directly, not rely on a human relay.
 
-**Operational context**: Redin has ~4 architects handling ~30-45 maintenance requests per day. Each request involves multiple WhatsApp messages (text describing the problem, photos/videos of the damage, voice notes with details, back-and-forth scheduling). That's potentially 150-300+ WhatsApp interactions per day being handled manually.
+**Operational context**: Redin has ~3 architects, each handling ~40 maintenance requests per day (~120 total). Each request involves multiple WhatsApp messages (text describing the problem, photos/videos of the damage, voice notes with details, back-and-forth scheduling). That's potentially 500+ WhatsApp interactions per day being handled manually.
 
 ## Step 2: Solution Design (AI-Led, During and After Call)
 
