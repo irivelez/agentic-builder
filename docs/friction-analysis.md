@@ -16,14 +16,19 @@ The customer needed Meta WhatsApp Cloud API credentials (Phone Number ID, WABA I
 6. Set up webhooks
 
 ### Where It Broke
-- **Password forgotten**: Customer couldn't log into his existing Facebook account
+- **Password forgotten**: Customer couldn't log into his existing Facebook account — but this is a human memory problem, not a technical one. Anyone can forget a password.
 - **New account rejected**: Created a fresh Meta account, but Meta doesn't allow new accounts to create developer apps (anti-abuse policy)
-- **Portal complexity**: Even if he got in, the developer portal presents concepts like "App Dashboard," "API Setup," "Webhooks," "System Users," "Permanent Tokens" — meaningless to a non-technical person
+- **Portal complexity**: Even without the password issue, the developer portal presents concepts like "App Dashboard," "API Setup," "Webhooks," "System Users," "Permanent Tokens" — meaningless to a non-technical person. The customer would need to be guided step by step through each screen.
 
 ### Why It Matters
-This is the **entry gate** to any WhatsApp automation. If the customer can't get past this step, nothing else matters. The bot can be perfect, the AI can be brilliant, but if the customer can't connect their WhatsApp number, it's all dead.
+The password incident is a symptom. The real problem is the **dependency model**: our automation cannot go live until the customer successfully completes a multi-step registration on a platform designed for developers. We built the bot. It works. But deploying it is blocked by a task that sits on the customer's side — and they can't execute it.
 
-### Severity: **CRITICAL — Complete Blocker**
+This means:
+- **We can't control the timeline** — deployment depends on the customer's ability to navigate Meta
+- **We become tech support for Meta** — instead of delivering value, we're guiding people through someone else's developer portal
+- **Every customer hits this wall** — it's not a one-off problem, it's structural to every single WhatsApp automation
+
+### Severity: **CRITICAL — Complete Blocker (Structural Dependency)**
 
 ---
 

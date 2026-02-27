@@ -62,12 +62,14 @@ This documents the real process followed to build the first WhatsApp automation 
 
 **What happened**:
 1. The customer needed to create a Meta Developer account to get WhatsApp API credentials
-2. He **forgot his existing Meta/Facebook password**
+2. He **forgot his existing Meta/Facebook password** (not a technical problem — a human memory problem that anyone can have)
 3. After recovery attempts, they tried creating a **new Meta account**
 4. Meta **rejected the new account** because it was too recent — new accounts aren't allowed to create developer apps immediately
-5. The process was completely blocked. A technical person could have resolved this in 10 minutes. For this customer, it was a dead end.
+5. The process was completely blocked.
 
-**Key insight**: This is the single biggest friction point for the entire platform. Every WhatsApp automation requires Meta API credentials, and Meta's developer portal is designed for developers, not for a barber in Bogotá or a maintenance company in Medellín. This friction point must be eliminated entirely from the customer experience.
+**Key insight**: The password issue is incidental. The real problem is structural: **the automation depends on the customer completing a task on a platform they don't understand.** The bot was built, tested, and ready — but it couldn't go live because the customer needed to successfully navigate Meta's developer portal, create an app, register their business, configure webhooks, and generate tokens. Even without the password issue, this would have been a wall.
+
+This creates a **dependency on the customer's side** to complete the WhatsApp provisioning. We can't do it for them (it's their business account), and they can't do it alone (it's a developer portal). That dependency — where the platform's deployment is blocked by a step the customer can't execute — is the single biggest friction point. It must be eliminated entirely from the customer experience.
 
 ## Step 6: Integration Reality Check
 
