@@ -99,14 +99,21 @@ The AI agent is instructed to act as Redin's architect in the initial WhatsApp i
 | Vercel hosting | Free tier |
 | **Total** | **~$18/month** |
 
-## What's Missing (Integration Gap)
+## What's Missing (Integration Gap) — The Critical Lesson
 
 The bot works as a standalone WhatsApp agent, but it does NOT yet integrate with Redin's existing AppSheet/Google Sheets system. This means:
 - Work orders live in the bot's database, not in their existing system
-- The architect still needs to manually transfer data to AppSheet
-- It reduces work but doesn't eliminate the manual loop entirely
+- The architect still needs to manually transfer data from the bot's dashboard to AppSheet
+- It reduces work but doesn't eliminate the manual loop entirely — it just moves the bottleneck
 
-**This is the critical lesson**: without integration into the existing system, the bot is just another silo. The full value comes when the bot reads and writes to the same Google Sheets that power their AppSheet — making the automation invisible to their existing workflow.
+**This is the single most important lesson from this build:** The business already HAS a system. They built it themselves. They know how to use it. They don't want a second system — they want their EXISTING system to work through WhatsApp automatically.
+
+For Redin specifically:
+- The owner opens AppSheet every morning and sees his work orders. That's his workflow.
+- If the WhatsApp bot writes new work orders directly into the same Google Sheet that powers his AppSheet, he sees them appear in his familiar interface. No learning curve. No "check two places."
+- If the bot is a separate dashboard with its own data, it's just ANOTHER thing he has to check — and he'll stop checking it within a week.
+
+**The integration path for Redin**: AppSheet runs on Google Sheets. If the owner shares that Google Sheet with our service account (a simple "Compartir" action he already knows how to do), the bot can read and write directly to it. His AppSheet keeps working exactly the same. The difference is that new maintenance requests now arrive automatically instead of him typing them in manually from WhatsApp.
 
 ## Key Insights from This Build
 

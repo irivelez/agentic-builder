@@ -2,9 +2,20 @@
 
 ## Vision
 
-A platform where any LATAM business that communicates with customers through WhatsApp can automate their existing workflow in under 15 minutes, with zero technical knowledge, and integrated with whatever system they already use.
+A platform where any LATAM business that already communicates with customers through WhatsApp can automate that existing workflow in under 15 minutes, with zero technical knowledge, integrated with whatever system they already use.
 
 **The customer experience should feel like:** "I had a chat, showed some screenshots, confirmed a few things, and now my WhatsApp answers for me."
+
+## Core Principles
+
+### 1. The Business Already Uses WhatsApp
+We are NOT introducing a new channel. These businesses already live on WhatsApp — it's their CRM, their booking system, their customer service desk. The pain is not "you need WhatsApp" — it's "you're drowning in WhatsApp." We automate the channel they already can't live without.
+
+### 2. The Business Already Has a System
+Most SMBs already have SOME system — Google Sheets, AppSheet, a paper notebook, an Excel file, even just their WhatsApp chat history. The bot MUST plug into that existing system, not replace it. If the owner opens their AppSheet tomorrow and sees the same interface but with new data that arrived through WhatsApp automatically — that's the win. A separate dashboard they have to learn is not value, it's burden.
+
+### 3. Zero Technical Decisions
+The customer should never be asked to choose a hosting provider, configure a webhook, or provide an API key. Every interaction should be either a YES/NO confirmation or a natural-language description. If a step requires understanding a technical concept, we've failed at that step.
 
 ---
 
