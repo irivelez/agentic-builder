@@ -4,18 +4,33 @@
 
 **Redin** is a locative maintenance company based in Colombia that operates across 25+ cities. They provide services including painting, electrical work, cleaning, ceiling installation, lighting, waterproofing, plumbing, and general maintenance. Their clients are typically building administrators and property managers.
 
+## Scale of Operations
+
+- **Team**: ~4 architects handling customer-facing operations
+- **Volume**: ~30-45 maintenance requests per day
+- **WhatsApp interactions**: Each request involves multiple messages (problem description, photos, videos, voice notes, scheduling back-and-forth) — potentially 150-300+ WhatsApp interactions per day handled manually
+- **Coverage**: 25+ cities across Colombia
+
 ## The Existing Workflow (Before Automation)
 
-Redin's entire customer-facing operation runs through WhatsApp:
+Redin's entire customer-facing operation runs through WhatsApp. The communication is **multimodal** — customers don't just type text. A single maintenance request typically includes:
+- **Text**: describing the problem ("Se está filtrando agua en el techo del tercer piso")
+- **Photos**: showing the damage (cracks, leaks, electrical issues)
+- **Videos**: showing the extent of a problem or hard-to-photograph issues
+- **Voice notes**: explaining urgency or details that are faster to say than type (very common in LATAM — customers prefer sending audio over typing long descriptions)
 
-1. **Intake**: A building administrator sends a WhatsApp message describing a maintenance issue — often with photos, voice notes, or videos of the problem
-2. **Triage**: An architect (operations person) reads the message, interprets the problem, classifies the type of service and urgency
+All of this happens in WhatsApp groups or direct chats. The bot MUST be multimodal — text-only automation misses the majority of the information customers send.
+
+**The manual workflow**:
+
+1. **Intake**: A building administrator sends a WhatsApp message describing a maintenance issue — using text, photos, videos, and/or voice notes
+2. **Triage**: An architect (one of ~4) reads the messages, interprets the problem across all media types, classifies the type of service and urgency
 3. **Coordination**: The architect checks availability, identifies the right technician based on service type and city, and assigns the job
 4. **Scheduling**: Back-and-forth via WhatsApp to agree on a date, time, and site access
 5. **Tracking**: Work order details are manually entered into their system (AppSheet built on Google Sheets)
 6. **Follow-up**: Status updates and completion confirmations via WhatsApp
 
-This loop happens dozens of times per day. The architect is the bottleneck — every new request requires their manual interpretation, classification, and routing.
+This loop happens 30-45 times per day across 4 architects. Each architect is a bottleneck — every new request requires their manual interpretation, classification, and routing.
 
 ## The System They Already Have
 

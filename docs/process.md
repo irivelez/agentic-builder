@@ -4,36 +4,31 @@
 
 This documents the real process followed to build the first WhatsApp automation (Redin), including how the human-AI collaboration worked, what we discovered, and why this process itself reveals the platform opportunity.
 
-## Step 1: Discovery Call (Human-Led)
+## Step 1: Discovery Call + Real-Time Collaboration (Human + AI, Simultaneous)
 
-**Who**: Irina (founder) on a Zoom call with the customer (Redin's owner)
+**Who**: Irina (founder) on a Zoom call with the customer (Redin's owner), while simultaneously chatting with Ari (AI co-builder)
 
 **What happened**: 
-- Irina listened to the customer describe his day-to-day workflows and pain points
-- He explained how his business operates: customers send WhatsApp messages with maintenance issues (text, photos, voice notes), and his team manually triages, classifies, assigns technicians, and coordinates schedules
+- Irina was on a Zoom call with the customer, listening to him describe his day-to-day workflows and pain points
+- **This was NOT a sequential process.** Irina didn't wait for the call to end to share a summary. She was typing insights to the AI **in real time**, as the conversation unfolded — essentially replicating the conversation live
+- Multiple iterations happened back and forth during the same call: Irina shared a piece of information → AI asked clarifying questions or proposed ideas → Irina used that to guide the next part of the conversation with the customer
+- The customer explained how his business operates: customers send WhatsApp messages with maintenance issues (text, photos, voice notes, videos), and his team of **~4 architects** manually triages, classifies, assigns technicians, and coordinates schedules — handling approximately **30-45 requests per day**
 - He showed his existing system — an AppSheet application built on Google Sheets that tracks work orders, clients, technicians, and service history
-- The conversation was unstructured — not a form, not a checklist, just a natural conversation about how the business works
+- Irina sent **screenshots** of the customer's AppSheet system during the call so the AI could understand the data structure in real time
+- The conversation was in **Spanish** (the customer is Colombian), and the AI processed insights in English for analysis while proposing solutions
 
-**Key insight**: The discovery process requires human empathy and business understanding. The customer didn't describe his "data model" or "workflow automation requirements" — he described his problems in plain language. The translation from problems to solutions happened afterward.
+**The real-time dynamic**: This was a three-party collaboration — customer speaking on Zoom, Irina translating and relaying to AI in chat, AI analyzing and proposing back to Irina, Irina steering the conversation with the customer. The AI was effectively "in the room" without the customer knowing.
 
-## Step 2: Insight Transfer (Human → AI)
+**Key insight**: The ideal tool would have been a **meeting transcription service** (like Otter.ai or similar) feeding the full Spanish conversation directly to the AI. Instead, Irina manually bridged the gap by typing in real time. This is itself a friction that future tooling should solve — the AI should be able to listen to the discovery call directly, not rely on a human relay.
 
-**Who**: Irina typing insights to Ari (AI co-builder)
+**Operational context**: Redin has ~4 architects handling ~30-45 maintenance requests per day. Each request involves multiple WhatsApp messages (text describing the problem, photos/videos of the damage, voice notes with details, back-and-forth scheduling). That's potentially 150-300+ WhatsApp interactions per day being handled manually.
 
-**What happened**:
-- After the Zoom call, Irina shared the key insights with the AI in natural language
-- She described the business type, the WhatsApp-centric workflow, the pain points
-- She sent **screenshots** of the customer's AppSheet system so the AI could understand the data structure
-- The AI analyzed the screenshots visually and reverse-engineered the data model without any API documentation
-
-**Key insight**: The information pipeline was: customer explains verbally → Irina translates to written insights → AI processes and proposes. Screenshots bridged the gap between a non-technical customer and a technical solution — the customer couldn't describe his schema, but the AI could read it from screen captures.
-
-## Step 3: Solution Design (AI-Led)
+## Step 2: Solution Design (AI-Led, During and After Call)
 
 **Who**: Ari (AI) proposed the architecture
 
 **What happened**:
-- Based on the insights and screenshots, the AI designed a complete solution:
+- Based on the real-time insights and screenshots, the AI designed a complete solution:
   - WhatsApp webhook to receive messages (text, images, audio)
   - Claude Haiku for intelligent interpretation and classification
   - Whisper for voice note transcription
